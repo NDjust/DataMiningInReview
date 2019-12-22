@@ -43,8 +43,7 @@ class Xgb:
 
     def train_randomized_search(self, x, y, folds=3):
         """ Randomized Search.
-        Randomized Search 알고리즘을 활용해 Xgboost 모델의 최적의 파라미터가
-        들어간 모델 생성.
+        Randomized Search 알고리즘을 활용해 Xgboost 모델의 최적의 파라미터가 들어간 모델 생성.
 
         :param x: train_x (np.array)
         :param y: train_y (np.array)
@@ -189,7 +188,7 @@ class SVM:
         print('\n Best hyperparameters:')
         print(grid.best_params_)
 
-        # grid search로 나온 Best parameter를 모델의 최종 parameter로 설정.
+        # grid search 로 나온 Best parameter를 모델의 최종 parameter 로 설정.
         self.params['C'] = grid.best_params_['C']
         self.params['gamma'] = grid.best_params_['gamma']
         self.params['kernel'] = grid.best_params_['kernel']
