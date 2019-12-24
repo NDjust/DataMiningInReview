@@ -120,6 +120,15 @@ class TextPreProcessor(object):
                     raw_sentence, remove_stopwords))
         return sentences
 
+    @staticmethod
+    def remove_emoji(review):
+        """ Remove emoji data.
+
+        :param df: dataframe
+        :return: remove emoji
+        """
+        EMOJI = re.compile('[\U00010000-\U0010ffff]', flags=re.UNICODE)
+        return EMOJI.sub(r'', review)
 
     # 참고 : https://gist.github.com/yong27/7869662
     # http://www.racketracer.com/2016/07/06/pandas-in-parallel/
